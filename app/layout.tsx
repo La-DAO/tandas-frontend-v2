@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider"
+import { PrivyAuthProvider } from "@/components/providers/privy-provider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -24,7 +25,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <PrivyAuthProvider>
+            {children}
+          </PrivyAuthProvider>
         </ThemeProvider>
       </body>
     </html>

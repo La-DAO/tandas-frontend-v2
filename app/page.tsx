@@ -1,16 +1,26 @@
 'use client';
 
-import React from "react";
-import { Button } from "@/components/ui/button"
+import { useEffect } from 'react'
+import { usePrivy } from '@privy-io/react-auth'
+import { useRouter } from 'next/navigation'
 
+export default function LoginPage() {
+  const { ready, authenticated, login } = usePrivy()
+  const router = useRouter()
 
-const page = () => {
+  useEffect(() => {
+    if (ready && authenticated) {
+      router.push('/dashboard')
+    }
+  }, [ready, authenticated, router])
+
+  if (!ready) return null
+
   return (
-    <div>hello world
-      <Button onClick={() => alert('clickd')}>Click me</Button>
+    <div className="min-h-screen flex items-center justify-center">
+      <button onClick={login} className="bg-green-500 text-white px-4 py-2 rounded">
+        Login to Tandas
+      </button>
     </div>
-
   )
-};
-
-export default page;
+}

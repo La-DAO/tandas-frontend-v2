@@ -37,28 +37,28 @@ const data = {
   },
   navMain: [
     {
-      title: "Dashboard",
-      url: "#",
+      title: "Inicio",
+      url: "/dashboard",
       icon: IconDashboard,
     },
     {
       title: "Acciones",
-      url: "#",
+      url: "/acciones",
       icon: IconListDetails,
     },
     {
       title: "Métricas",
-      url: "#",
+      url: "/metricas",
       icon: IconChartBar,
     },
     {
       title: "Mis Tandas",
-      url: "#",
+      url: "/mis-tandas",
       icon: IconFolder,
     },
     {
       title: "Mis grupos",
-      url: "#",
+      url: "/mis-grupos",
       icon: IconUsers,
     },
   ],
